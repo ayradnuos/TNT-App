@@ -1,0 +1,11 @@
+{
+    "channelName": "myChannel",
+    "chaincodeName": "basic",
+    "mspOrg1": "Org1MSP",
+    "walletPath": "C:/scv-platform-setup-files/application/src/wallet",
+    "org1UserId": "appUser1",
+    "caHostname": "org1.example.com",
+    "affiliation":"org.department",
+    "orgName": "org1",
+    "connectionJSON": "connection-org1.json"
+}
