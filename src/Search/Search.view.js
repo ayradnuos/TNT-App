@@ -18,6 +18,8 @@ const SearchView = props => {
 		setSearchParams,
 		searchForEvents,
 		searchResults,
+		selectedKey,
+		updateSelectedKey,
 	} = props;
 
 	return (
@@ -42,7 +44,13 @@ const SearchView = props => {
 						searchForEvents={searchForEvents}
 					/>
 				)}
-				{searchResults && <SearchResults searchResults={searchResults} />}
+				{searchResults && (
+					<SearchResults
+						searchResults={searchResults}
+						selectedKey={selectedKey}
+						updateSelectedKey={updateSelectedKey}
+					/>
+				)}
 			</View>
 
 			<Footer title={'Search'} allowBack />

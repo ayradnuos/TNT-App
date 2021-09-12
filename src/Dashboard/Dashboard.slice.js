@@ -4,7 +4,7 @@ import axios from 'axios';
 export const dashboardSlice = createSlice({
 	name: 'dashboard',
 	initialState: {
-		results: null,
+		results: [],
 	},
 	reducers: {
 		saveResults: (state, action) => {

@@ -6,7 +6,7 @@ import DashboardView from './Dashboard.view';
 const DashboardScreen = props => {
 	const [isLoading, setLoading] = useState(true);
 	const dispatch = useDispatch();
-	const results = useSelector(state => state.dashboard.results);
+	const results = useSelector(state => state.dashboard.results) ?? [];
 	const [selectedKey, setSelectedKey] = useState(-1);
 
 	useEffect(() => {

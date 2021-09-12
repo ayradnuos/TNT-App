@@ -33,6 +33,7 @@ const SearchScreen = props => {
 		TRANSPORT: false,
 		TRANSPORTEQUIPMENT: false,
 	});
+	const [selectedKey, setSelectedKey] = useState(-1);
 
 	const [searchParams, setSearchParams] = useReducer(
 		searchReducer,
@@ -50,8 +51,17 @@ const SearchScreen = props => {
 		if (searchResults?.length > 0) {
 			console.log('HERE?', searchResults.length);
 			setSearchPanelVisibility(false);
+		} else {
+			setSearchPanelVisibility(true);
 		}
 	}, [searchResults]);
+
+	useEffect(() => setSelectedKey(-1), []);
+
+	const updateSelectedKey = value => {
+		if (value === selectedKey) setSelectedKey(-1);
+		else setSelectedKey(value);
+	};
 
 	const searchForEvents = () => {
 		setLoading(true);
@@ -82,6 +92,8 @@ const SearchScreen = props => {
 			searchForEvents={searchForEvents}
 			searchResults={searchResults}
 			isLoading={isLoading}
+			selectedKey={selectedKey}
+			updateSelectedKey={updateSelectedKey}
 		/>
 	);
 };
